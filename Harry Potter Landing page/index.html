@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Jolly+Lodger&family=Lakki+Reddy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="cursor"></div> -->
+        <div class="main ">
+            <nav>
+                <img src="Untitled.png" alt="" id="logo">
+                <ul class="nav-items">
+                    <li ><a href=""class="nav-item">Home</a></li>
+                    <li ><a href=""class="nav-item">Class</a></li>
+                    <li ><a href=""class="nav-item">Quiz</a></li>
+                    <li ><a href=""class="nav-item">Shop</a></li>
+                    <li ><a href=""class="nav-item">Hogsmeade</a></li>
+                    <li ><a href=""class="nav-item">Contact</a></li>
+                </ul>
+                <Button class="navBtn">Enter Your Class</Button>
+            </nav>
+            <!-- <img src="https://www.hdwallpapers.in/download/harry_potter_hogwarts_under_dark_cloudy_sky_during_nighttime_hd_movies-HD.jpg" id="univ-img" alt=""> -->
+            <div class="heading">
+                <h1 id="head-text">Potterverse University</h1>
+                <p class="head-para">Let's Explore the maigical world of Harry Potter with Swikki_Codes..!</p>
+            </div>
+        </div>
+        <div class="particles-container"></div>
+
+
+        <div class="wizzard">
+            <img src="https://i.pinimg.com/originals/cb/37/74/cb3774d48f56eee5cc888ef73d2928be.jpg" alt="">
+            <h2 id="wizard-head">Meet the Wizards</h2>
+        </div>
+
+        <div class="train">
+            <div class="train-main">
+                <div class="train-left">
+                    <div class="filter"></div>
+                    <img src="Train.png" alt="" class="train-img">
+                </div>
+                <div class="train-right">
+                    <div class="right-text">
+                        <h2 class="sub-head">Platform 9-3/4</h2>
+                        <p class="sub-text">Quickely Everyone! Get on the hogwarts Express and Let's Make our way to the wizarding world's most magnificent school!</p>
+                    </div>
+                    <button class="train-btn">Get in the Train</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="dobby">
+            <div class="dobby-main">
+                <div class="train-left">
+                    <div class="right-text">
+                        <h2 class="sub-head">Meet Dobby</h2>
+                        <p class="sub-text">Dobby (28 June (year unknown), - March 1998) was a house-elf who served the Malfoy family. His masters were Dark Wizards who treated him cruelly. In 1992, he tried to warn Harry Potter of the plot to have the Chamber of Secrets reopened which he came to know via the contact between his masters and Lord Voldemort.</p>
+                    </div>
+                    <button class="train-btn">Say Hi to Dobby</button>
+                </div>
+                <div class="train-right">
+                    <img src="dobby.png" alt="" class="dobby-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="phoenix">
+        <div class="p-main">
+            <div class="train-left">
+                <div class="filter"></div>
+                <img src="https://openclipart.org/image/800px/229404" alt="" class="phoenix-img">
+            </div>
+            <div class="train-right">
+                <div class="right-text">
+                    <h2 class="sub-head">Meet Phoenix</h2>
+                    <p class="sub-text">The phoenix is an immortal bird that cyclically regenerates or is otherwise born again. While it's part of Greek mythology, it has analogs in many cultures such as Egyptian and Persian. Associated with the sun, a phoenix obtains new life by rising from the ashes of its predecessor.</p>
+                </div>
+                <button class="train-btn">Say Hi to Phoenix</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- <script src="script.js"></script> -->
+    <script type="module">
+        // Import particlesCursor from the correct URL
+        import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js';
+
+        // Create a new particles container
+ const particlesContainer = document.querySelector('.particles-container');
+
+
+        // Initialize particlesCursor with the particles container
+        const pc = particlesCursor({
+            el: particlesContainer,
+            gpgpuSize: 512,
+            colors: [ 0xffffff,0x00FF00,0x0000ff],
+            color:   0xFFA500 ,
+            coordScale: 0.5,
+            noiseIntensity: 0.005,
+            noiseTimeCoef: 0.0001,
+            pointSize: 2,
+            pointDecay: 0.0025,
+            sleepRadiusX: 250,
+            sleepRadiusY: 250,
+            sleepTimeCoefX: 0.001,
+            sleepTimeCoefY: 0.002,
+        });
+
+        // Update particle position based on cursor movement
+        document.addEventListener('mousemove', (event) => {
+            const mouseX = event.clientX / window.innerWidth;
+            const mouseY = 1 - event.clientY / window.innerHeight;
+            
+            pc.uniforms.uMousePos.value.set(mouseX, mouseY);
+        });
+        
+
+// Update particle position based on cursor movement
+document.addEventListener('mousemove', (event) => {
+    const mouseX = event.clientX / window.innerWidth;
+    const mouseY = 1 - event.clientY / window.innerHeight;
+    
+    console.log(pc); // Check the entire pc object
+console.log(pc.uniforms); // Check the uniforms property specifically
+
+    pc.uniforms.uMousePos.value.set(mouseX, mouseY); // Error occurs here
+});
+
+
+        document.body.addEventListener('click', () => {
+            pc.uniforms.uColor.value.set(Math.random() * 0xffffff);
+            pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2;
+            pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001;
+            pc.uniforms.uPointSize.value = 1 + Math.random() * 10;
+        });
+        
+        document.body.addEventListener('click', () => {
+            pc.uniforms.uColor.value.set(Math.random() * 0xffffff);
+            pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2;
+            pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001;
+            pc.uniforms.uPointSize.value = 1 + Math.random() * 10;
+            
+            // Reset particle parameters after 2 seconds
+            setTimeout(() => {
+                pc.uniforms.uColor.value.set(0x000000); // Set color to black (invisible)
+                pc.uniforms.uCoordScale.value = 0.001;
+                pc.uniforms.uNoiseIntensity.value = 0.0001;
+                pc.uniforms.uPointSize.value = 0;
+            }, 2000);
+        });
+
+        particlesContainer.style.zIndex = -2;
+    </script>
+</body>
+</html>

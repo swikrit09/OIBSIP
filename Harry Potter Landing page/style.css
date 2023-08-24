@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(188, 181, 181);
+    font-family: 'Jolly Lodger', cursive;
+    font-family: 'Lakki Reddy', cursive;
+    font-family: 'Henny Penny', cursive;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+}
+
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 200vh;
+    pointer-events: none; /* Ensure particles don't interfere with content */
+    z-index: -2;
+     /* Place particles behind content */
+}
+
+/* Style the container that holds the main content */
+.container {
+    position: relative; /* Important for positioning .particles-container */
+    /* Add any other styles you want for the .container */
+}
+
+.main {
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* background: url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/12/Harry-Potter-Hogwarts-Castle.jpg");
+    background-size: contain; */
+    filter: brightness(0.1);
+    z-index: -3; /* Place the pseudo-element behind the content */
+  }
+
+nav {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+}
+
+.nav-items {
+    display: flex;
+    gap: 4.5rem;
+    background-color: rgb(3, 3, 15);
+    padding: 1.8rem 4.5rem;
+    border-radius: 20px;
+    /* height: 40%; */
+}
+
+
+li {
+    all: unset;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.7rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+.nav-item:hover{
+    background: linear-gradient(to right ,#8ce2ee,rgb(4, 49, 58));
+    -webkit-background-clip:text;
+    color: transparent;
+    font-size: 2.5rem;
+}
+
+#logo {
+    height: 11rem;
+    width: auto;
+    mix-blend-mode:lighten;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    filter: brightness(150%);
+}
+
+.navBtn {
+    all: unset;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    color: rgb(192, 218, 255);
+}
+
+button:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+.navBtn::after,
+.navBtn::before {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #34cff2;
+    margin: 10px;
+    margin-left: 25%;
+    width: 50%;
+}
+.heading{
+    margin-bottom: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#head-text {
+    background: linear-gradient(to right ,#8ce2ee,rgb(4, 49, 58));
+    -webkit-background-clip:text;
+    color: transparent;
+    font-size: 5.6rem;
+}
+.head-para{
+    font-size: 2.6rem;
+
+}
+
+
+
+.wizzard{
+    height: 100vh ;
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+ }
+    #wizard-head{
+        font-size: 5rem;
+        background: linear-gradient(to right ,#8ce2ee,rgb(5, 81, 96));
+        -webkit-background-clip:text;
+        color: transparent;
+    }
+    .wizzard>img{
+        width: 55rem;
+    }
+
+
+
+
+
+.train{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgb(0, 0, 0), rgb(20, 20, 20),black);
+    
+}
+.train-main{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 8rem;
+}
+.train-left{
+    flex-basis: 60%;
+}
+
+.train-img{
+    width: 70rem;
+position: relative;
+
+    
+}
+
+.train-right{
+    flex-basis: 45%;
+    
+    /* align-items: center; */
+}
+.right-text{
+    height: 45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sub-head{
+    font-size: 4rem;
+    font-family: 'Lakki Reddy', cursive;
+    font-weight: 200;
+
+}
+.sub-text{
+    font-size: 1.9rem;
+    font-family: 'Lakki Reddy', cursive;
+    text-transform: capitalize
+
+}
+.train-btn{
+    background-color: transparent;
+    font-size: 1.8rem;
+    /* margin-top: 15rem; */
+    margin-left: 30rem;
+    padding: 1rem 1rem;
+    border: none;
+    border-top: 2px solid #34cff2;
+    border-bottom: 2px solid #34cff2;
+}
+
+
+
+
+
+.dobby{
+        width: 100%;
+        height: 100vh;
+        /* background: linear-gradient(rgb(0, 0, 0),rgb(13, 12, 12),black); */
+
+}
+.dobby::before{
+    content: "";
+    position: absolute;
+    top: 300vh;
+    left: 0;
+    width: 100%;
+    height: 120vh;
+    background: url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/12/Harry-Potter-Hogwarts-Castle.jpg");
+    background-size: contain;
+    filter: brightness(0.1); /* Apply the desired filter to the pseudo-element */
+    z-index: -3; /* Place the pseudo-element behind the content */
+}
+.dobby-main{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10rem;
+}
+.dobby-img{
+    width: 30rem;
+    /* mix-blend-mode: color-dodge; */
+}
+.phoenix{
+    width: 100%;
+    height: 100vh;
+    background-color:black;
+    display: flex;
+    align-items: center;
+}
+.phoenix-img{
+    width: 50rem;
+    /* mix-blend-mode: color-dodge; */
+}
+.p-main{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rem;
+}
+
+
+
+
+@media screen and (max-width:690px) {
+
+    html{
+        font-size: 50%;
+    }
+    .nav-items{
+        display: none;
+    }
+}
